@@ -69,10 +69,10 @@ npm start
 
 Create a `.env` file in the server folder:
 
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-RAZORPAY_KEY_ID=your_key
-RAZORPAY_KEY_SECRET=your_secret
+--PORT=5000
+--MONGO_URI=your_mongodb_connection_string
+--RAZORPAY_KEY_ID=your_key
+--RAZORPAY_KEY_SECRET=your_secret
 
 ---
 
