@@ -1,0 +1,70 @@
+/* IntroLoader.css */
+
+.intro-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: white;
+}
+
+.intro-text {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #ff6347;
+  letter-spacing: 2px;
+  transition: transform 0.6s ease;
+}
+
+.intro-text.expand {
+  transform: scale(1.2);
+}
+
+.intro-text span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(40px);
+  transition: all 0.5s ease;
+}
+
+.intro-text span.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.circle-loader {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentage {
+  position: absolute;
+  font-size: 20px;
+  color: #454545;
+  font-weight: bold;
+}
+
+/* HIDE LOADER */
+.circle-loader.hide {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .circle-loader {
+    top: auto;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .intro-text {
+    font-size: 3rem;
+  }
+}
