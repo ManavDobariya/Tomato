@@ -1,5 +1,6 @@
 const foodModel = require("../models/foodModel.js");
 const fs = require("fs");
+const path = require("path");
 
 const addFood = async (req, res) => {
   const { name, description, price, category } = req.body;
@@ -46,7 +47,10 @@ const listFood = async (req, res) => {
 const removeFood = async (req, res) => {
   try {
     const food = await foodModel.findById(req.body.id);
-    fs.unlink(`uploads/${food.image}`, () => {});
+    fs.unlink(
+  path.join(__dirname, "../uploads", food.image),
+  () => {}
+);
     await foodModel.findByIdAndDelete(req.body.id)
     res.json({
         success:true,
