@@ -2,6 +2,7 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 //files
 const connectDB = require("./config/db.js");
@@ -27,7 +28,12 @@ app.use(
 connectDB();
 
 app.use("/api/food", foodRouter);
-app.use("/images", express.static("uploads"));
+
+
+app.use(
+  "/images",
+  express.static(path.join(__dirname, "uploads"))
+);
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRoute);
