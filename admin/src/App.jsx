@@ -13,7 +13,7 @@ import Main from './pages/Main/Main'
 
 
 const App = () => {
-  const url = 'http://localhost:3000';
+  const url = import.meta.env.VITE_API_URL
   return (
     <div>
       <ToastContainer />

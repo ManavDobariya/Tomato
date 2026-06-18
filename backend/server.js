@@ -11,7 +11,7 @@ const cartRouter = require("./routes/cartRoute.js");
 const orderRoute = require("./routes/orderRoute.js");
 
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
