@@ -21,7 +21,7 @@ const placeOrder = async (req, res) => {
     await userModel.findByIdAndUpdate(userId, { cartData: {} });
 
     const options = {
-      amount: amount * 100 * 93.09, // INR → paise
+      amount: amount *100, // INR → paise
       currency: "INR",
       receipt: newOrder._id.toString(),
     };
